@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ayomitideoaj/ontologies/SearchAlgorithmsOntology.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ayomitideoaj/ontologies/SearchAlgorithmsOntology.owl">
+    <Prefix name="" IRI="http://www.semanticweb.org/ayomitideoaj/ontologies/SearchAlgorithmsOntology.owl/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#AStarSearch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BestFirstSearch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BreadthFirstSearch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DepthFirstSearch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InformedSearch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Metric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SearchAlgorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SearchNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SearchSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UninformedSearch"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCost"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGoalNode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMetric"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNeighbor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStartNode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesDataStructure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isComplete"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isOptimal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#performanceCost"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#spaceComplexity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#timeComplexity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#usesQueue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#usesStack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AStarSearch"/>
+        <Class IRI="#InformedSearch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BestFirstSearch"/>
+        <Class IRI="#InformedSearch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BreadthFirstSearch"/>
+        <Class IRI="#UninformedSearch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DepthFirstSearch"/>
+        <Class IRI="#UninformedSearch"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformedSearch"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UninformedSearch"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#AStarSearch"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BestFirstSearch"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BreadthFirstSearch"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DepthFirstSearch"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isComplete"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isOptimal"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isOptimal"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal>A* search algorithm uses heuristic function and path cost to find optimal path</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performanceCost"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#spaceComplexity"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal>O(b^d)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesQueue"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesStack"/>
+        <NamedIndividual IRI="#AStarSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#description"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal>Uses heuristic function to estimate most promising path</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isComplete"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isOptimal"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performanceCost"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#spaceComplexity"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal>O(b^d)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#timeComplexity"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal>O(b^d)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesQueue"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesStack"/>
+        <NamedIndividual IRI="#BestFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#description"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal>Explores all nodes at current depth before moving deeper</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isComplete"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isOptimal"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performanceCost"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#spaceComplexity"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal>O(b^d)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#timeComplexity"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal>O(b^d)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesQueue"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesStack"/>
+        <NamedIndividual IRI="#BreadFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#description"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal>Explores as far as possible along each branch before backtracking</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isComplete"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isOptimal"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performanceCost"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#spaceComplexity"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal>O(bm)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#timeComplexity"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal>O(b^m)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesQueue"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#usesStack"/>
+        <NamedIndividual IRI="#DepthFirstSearchInstance"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCost"/>
+        <Class IRI="#SearchNode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGoalNode"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMetric"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNeighbor"/>
+        <Class IRI="#SearchNode"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStartNode"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesDataStructure"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCost"/>
+        <Class IRI="#Metric"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGoalNode"/>
+        <Class IRI="#SearchNode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMetric"/>
+        <Class IRI="#Metric"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNeighbor"/>
+        <Class IRI="#SearchNode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStartNode"/>
+        <Class IRI="#SearchNode"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesDataStructure"/>
+        <Class IRI="#DataStructure"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#description"/>
+        <Class IRI="#InformedSearch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#description"/>
+        <Class IRI="#UninformedSearch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isComplete"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isOptimal"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performanceCost"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#spaceComplexity"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#timeComplexity"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#timeComplexity"/>
+        <Class IRI="#UninformedSearch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#usesQueue"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#usesStack"/>
+        <Class IRI="#SearchAlgorithm"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#isComplete"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isOptimal"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#performanceCost"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#spaceComplexity"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#timeComplexity"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#usesQueue"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#usesStack"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCost</IRI>
+        <Literal>Represents the cost or weight associated with traversing between nodes in the search space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGoalNode</IRI>
+        <Literal>Specifies the target node that the search algorith aims to reach.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMetric</IRI>
+        <Literal>Indicates the evaluation metric used by the search algorithm for decision making</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasNeighbor</IRI>
+        <Literal>Defines the connection between adjacent nodes in the search space</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStartNode</IRI>
+        <Literal>Specifies the initial node from which the search algorithm begins</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performanceCost</IRI>
+        <Literal>Indicates the relative computational cost of executing the algorithm</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#spaceComplexity</IRI>
+        <Literal>Represents the space complexity of the algorithm in big O notation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#timeComplexity</IRI>
+        <Literal>Represents the time complexity of the algorithm</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#usesQueue</IRI>
+        <Literal>Indicates whether the algorithm uses a queue data structure for node exploration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#usesStack</IRI>
+        <Literal>Indicates whether the algorithm uses a stack datastructure for node exploration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>owl:topObjectProperty</AbbreviatedIRI>
+        <Literal>Algorithms that search without any additional information about states beyond successor function</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
