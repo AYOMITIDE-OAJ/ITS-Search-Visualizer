@@ -175,7 +175,7 @@
                             <TitledPane text="More Info">
                                 <AnchorPane fx:id="spMoreInfo">
                                     <TextArea id="more_info" maxWidth="350" prefHeight="200" wrapText="true" editable="false" layoutX="15">
-                                        Created by The Code Implementation (Youtube Channel). Video tutorials can be found at https://tinyurl.com/vnafc2h. The project's intention is to help people learn how to write path finding algorithms in a fun and interactive way.
+
                                     </TextArea>
                                 </AnchorPane>
                             </TitledPane>
