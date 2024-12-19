@@ -5,4 +5,4 @@ Ontology Search algorithm visualizer where users can create weighted, directiona
 
 Protege Ontology Visualizer:
 
-<img src="SearchAlgorithmsOntology.owx.svg" width=700>
+<img src="SearchAlgorithmsOntology.owx.svg" width=1000>
